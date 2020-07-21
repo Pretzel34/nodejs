@@ -1,5 +1,12 @@
-function sayHello(name){
-    console.log('Hello ' + name);
-}
+const os = require('os');
 
-sayHello('Preston');
+var totalMemory = os.totalmem();
+var freeMemory = os.freemem();
+
+//console.log('Total Memory: ' + totalMemory);
+
+//Template string
+//ES6 / ES2015 : ECMAScript 6
+
+console.log(`Total Memory: ${totalMemory}`);
+console.log(`Total Memory: ${freeMemory}`);
