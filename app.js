@@ -1,12 +1,25 @@
-const os = require('os');
+// const fs = require('fs');
 
-var totalMemory = os.totalmem();
-var freeMemory = os.freemem();
+// // const files = fs.readdirSync('./');
 
-//console.log('Total Memory: ' + totalMemory);
+// // console.log(files);
 
-//Template string
-//ES6 / ES2015 : ECMAScript 6
+// fs.readdir('./', function(err, files) {
+//     if (err) console.log('Error', err);
+//     else console.log('Result', files);
+// });
 
-console.log(`Total Memory: ${totalMemory}`);
-console.log(`Total Memory: ${freeMemory}`);
+const EventEmitter = require('events');
+const emitter = new EventEmitter();
+
+///Register a listener
+emitter.on('messageLogged', function(){
+    console.log('Listener called');
+});
+
+
+
+//Raised an event
+emitter.emit('messageLogged');
+//make a noise, or signal something
+
