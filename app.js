@@ -13,13 +13,13 @@ const EventEmitter = require('events');
 const emitter = new EventEmitter();
 
 ///Register a listener
-emitter.on('messageLogged', function(){
-    console.log('Listener called');
+emitter.on('messageLogged', (arg) => {
+    console.log('Listener called', arg);
 });
 
 
 
 //Raised an event
-emitter.emit('messageLogged');
+emitter.emit('messageLogged', {id: 1, url: 'http://'});
 //make a noise, or signal something
 
